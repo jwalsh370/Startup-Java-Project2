@@ -28,4 +28,14 @@ public class TeamTest {
   myTeam.addMember(myMember);
   assertTrue(myTeam.getMember().contains(myMember));
   }
+
+  @Test
+  public void myTeam_addsTwoMembersToCollectionandSizeisTwo_True(){
+    Team myTeam = new Team("Falcon");
+    Member firstMember = new Member("Word", "Java", "novice");
+    Member secondMember = new Member("Sword", "Ruby", "Master");
+    myTeam.addMember(firstMember);
+    myTeam.addMember(secondMember);
+    assertEquals(2, myTeam.getMember().size());
+  }
 }
