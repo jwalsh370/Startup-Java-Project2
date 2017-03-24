@@ -19,6 +19,14 @@ public class MemberTest {
     assertEquals("beginner", myMember.getSkill());
   }
 
+  @Test
+  public void returns_allInstancesOfMember_true() {
+    Member firstMember = new Member("Word", "Java", "novice");
+    Member secondMember = new Member("Sword", "Ruby", "Master");
+    assertEquals(true, Member.all().contains(firstMember));
+    assertEquals(true, Member.all().contains(secondMember));
+  }
+
 
 
 }
