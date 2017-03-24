@@ -38,7 +38,7 @@ public class Member {
     instances.clear();
   }
 
- public int getId() {
+ public int getMemberId() {
    return mId;
  }
 

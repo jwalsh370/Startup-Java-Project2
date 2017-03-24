@@ -1,3 +1,29 @@
 <!--index.vtl-->
+<div class="jumbotron">
+  <h2>Hack Attack</h2>
+</div>
+
+<h3>About Hackathons</h3>
+
+
+<!-- TeamGroup.vtl -->
+
+  #if ($teamCollectionsAll)
+    <h1>All Teams</h1>
+    <ul>
+      #foreach ($team in $teamCollectionsAll)
+      <li><a href="/teams/$team.getId()/new-member">$team.getTeamName()</a></li>
+      #end
+    </ul>
+
+  #else
+    <p>
+      No Teams to display.
+    </p>
+  #end
+
+  <a href="/teams/inventory">View Team List</a><br>
+<a href="/teams/members/new">Add a New Member</a>
+
 
 <!--index.vtl-->
