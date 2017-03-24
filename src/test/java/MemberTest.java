@@ -33,9 +33,15 @@ public class MemberTest {
 
   @Test
   public void getId_tasksInstantiateWithId_1() {
-
     Member myMember = new Member("True That", "Java", "beginner");
     assertEquals(1, myMember.getId());
+  }
+
+  @Test
+  public void find_returnsMemberWithSameId() {
+    Member firstMember = new Member("Word", "Java", "novice");
+    Member secondMember = new Member("Sword", "Ruby", "Master");
+    assertEquals(Member.find(secondMember.getId()), secondMember);
   }
 
 
