@@ -1,9 +1,13 @@
 import org.junit.*;
 import static org.junit.Assert.*;
+import java.util.*;
 
 public class MemberTest {
 
-
+  @Before
+   public void tearDown() {
+     Member.clear();
+   }
 
   @Test
   public void MemberClass_Instantiates_True() {
@@ -25,6 +29,13 @@ public class MemberTest {
     Member secondMember = new Member("Sword", "Ruby", "Master");
     assertEquals(true, Member.all().contains(firstMember));
     assertEquals(true, Member.all().contains(secondMember));
+  }
+
+  @Test
+  public void getId_tasksInstantiateWithId_1() {
+
+    Member myMember = new Member("True That", "Java", "beginner");
+    assertEquals(1, myMember.getId());
   }
 
 

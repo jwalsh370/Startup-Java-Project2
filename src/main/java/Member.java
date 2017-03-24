@@ -7,6 +7,7 @@ public class Member {
   private String mLanguage;
   private String mSkill;
   private static List<Member> instances = new ArrayList<Member>();
+  private int mId;
 
   public Member(String name, String language, String skill) {
 
@@ -14,6 +15,7 @@ public class Member {
     mLanguage = language;
     mSkill = skill;
     instances.add(this);
+    mId = instances.size();
   }
 
   public String getName() {
@@ -30,6 +32,14 @@ public class Member {
 
   public static List<Member> all() {
    return instances;
+ }
+
+ public static void clear() {
+    instances.clear();
+  }
+
+ public int getId() {
+   return mId;
  }
 
 }
