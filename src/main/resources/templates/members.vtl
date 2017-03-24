@@ -1,0 +1,15 @@
+<!--members.vtl-->
+<h1>Member list!</h1>
+
+#if ($membersInCategory)
+  <ul>
+    #foreach ($member in $membersInTeam)
+      <li><a href="/teams/$team.getId()/members/$member.getmemberId()">$member.getName()</a></li>
+    #end
+  </ul>
+#else
+  <p>No members!</p>
+#end
+
+<a href="/teams/members/new">Add New Member</a>
+<!--tasks.vtl-->

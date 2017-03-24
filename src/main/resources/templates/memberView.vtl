@@ -1,0 +1,10 @@
+#foreach ($member in $members)
+  <ul>
+    <li>Member Name: $member.getName()</li>
+    <li>Member Coding Language: $member.getLanguage()</li>
+    <li>Member Skill Level: $member.getSkill()</li>
+    <li>Member Inventory Number: $member.getMemberId()</li>
+  </ul>
+#end
+
+<a href="/">Go Home</a>

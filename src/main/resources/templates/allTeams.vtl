@@ -1,0 +1,17 @@
+<h1>This is the Inventory page for all Teams and Members.</h1>
+
+#foreach ($member in $members)
+  <ul>
+    <li>Member Name: $member.getName()</li>
+    <li>Member Coding Language: $member.getLanguage()</li>
+    <li>Member Skill Level: $member.getSkill()</li>
+    <li>Member Inventory Number: $member.getMemberId()</li>
+  </ul>
+#end
+
+#foreach ($member in $teams)
+  <ul>
+    <li>Team Name: $member.getTeamName()</li>
+    <li>Member Inventory Number: $member.getId()</li>
+  </ul>
+#end
