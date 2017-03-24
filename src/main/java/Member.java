@@ -1,7 +1,14 @@
 public class Member {
-  
-  public Member(String description) {
 
+  private String mName;
+
+  public Member(String name) {
+
+    mName = name;
+  }
+
+  public String getName() {
+    return mName;
   }
 
 }
