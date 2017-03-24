@@ -20,4 +20,12 @@ public class TeamTest {
     assertEquals("Falcon", myTeam.getTeamName());
     assertEquals(1, myTeam.getId());
   }
+
+  @Test
+  public void newTeam_addsMembertoTeam_true() {
+    Team myTeam = new Team("Falcon");
+  Member myMember = new Member("Saul", "Java", "beginner");
+  myTeam.addMember(myMember);
+  assertTrue(myTeam.getMember().contains(myMember));
+  }
 }
