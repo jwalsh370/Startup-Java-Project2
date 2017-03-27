@@ -1,10 +1,10 @@
-<h1>Add a  Team Member to $team.getName()</h1>
+<h1>Add a  Team Member to $team.getTeamName()</h1>
 
 <p>
   Add a team Member here.
 </p>
 
-<form action="/teams/members/new" method="post">
+<form action="/teams/:id/members/new" method="post">
 
   <input id="teamId" name="teamId" type="hidden" value="$team.getId()">
 

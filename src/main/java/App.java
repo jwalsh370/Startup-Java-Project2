@@ -30,16 +30,18 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("teams/:id/member/new", (request, response) -> {
+    post("/teams/:id/members/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Team newTeam = Team.find(Integer.parseInt(request.params(":id")));
+      model.put("teams", request.session().attribute("teams"));
       // model.put("teams", teams);
       model.put("template", "templates/memberForm.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/teams/members/new", (request, response) -> {
+    post("/teams/:id/members/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
+      Team newTeam = Team.find(Integer.parseInt(request.params(":id")));
       model.put("template", "templates/memberForm.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -53,7 +55,7 @@ public class App {
 
     post("/teams/members/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      // Team newTeam = Team.find(Integer.parseInt(request.params(":id")));
+      Team newTeam = Team.find(Integer.parseInt(request.params(":id")));
       // model.put("team", team);
       String name = request.queryParams("name");
       String language = request.queryParams("language");
@@ -62,7 +64,7 @@ public class App {
       Team teamCollection = Team.find(Integer.parseInt(request.queryParams("I")));
       Team.addMember(newMember);
       model.put("team", teamCollection);
-      model.put("template", "templates/memberform.vtl");
+      model.put("template", "templates/memberView.vtl");
       model.put("template", "templates/members.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -86,7 +88,7 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/teams/members/all-members", (request, response) -> {
+    get("/teams/members/all-members", (request, response) -> {
      Map<String, Object> model = new HashMap<String, Object>();
      String name = request.queryParams("name");
      Team newTeam = new Team(name);
