@@ -8,8 +8,8 @@ public class Team {
   private List<Member> mMembers;
 
 
-  public Team(String teamName) {
-    mName = teamName;
+  public Team(String name) {
+    mName = name;
     instances.add(this);
     mId = instances.size();
     mMembers = new ArrayList<Member>();
@@ -42,9 +42,4 @@ public class Team {
  public void addMember(Member member) {
    mMembers.add(member);
  }
-
- // public static List<Team> getAllTeams() {
- //   return instances;
- // }
-
 }
