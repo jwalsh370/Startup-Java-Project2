@@ -2,22 +2,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
-  private String mTeamName;
-  private static List<Team> instances = new ArrayList<Team>();
+  private String mName;
+  private static ArrayList<Team> instances = new ArrayList<Team>();
   private int mId;
-  private static List<Member> mMember;
+  private List<Member> mMembers;
 
 
   public Team(String teamName) {
-    mTeamName = teamName;
+    mName = teamName;
     instances.add(this);
     mId = instances.size();
-    mMember = new ArrayList<Member>();
+    mMembers = new ArrayList<Member>();
   }
 
-  public String getTeamName() {
-    return mTeamName;
+  public String getName() {
+    return mName;
   }
+
+  public static ArrayList<Team> all() {
+  return instances;
+ }
 
   public static void clear() {
     instances.clear();
@@ -31,16 +35,16 @@ public class Team {
     return instances.get(id - 1);
   }
 
-  public static List<Member> getMember() {
-   return mMember;
+  public List<Member> getMembers() {
+   return mMembers;
  }
 
- public static void addMember(Member member) {
-   mMember.add(member);
+ public void addMember(Member member) {
+   mMembers.add(member);
  }
 
- public static List<Team> getAllTeams() {
-   return instances;
- }
+ // public static List<Team> getAllTeams() {
+ //   return instances;
+ // }
 
 }

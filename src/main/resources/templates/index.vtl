@@ -1,29 +1,13 @@
 <!--index.vtl-->
-<div class="jumbotron">
-  <h2>Hack Attack</h2>
-</div>
+<h1>Hackathon!</h1>
 
 <h3>About Hackathons</h3>
 
+<p>A hackathon is a design sprint-like event in which computer programmers and others involved in software development, including graphic designers, interface designers, project managers, and others, often including subject-matter-experts, collaborate intensively on software projects. Occasionally, there is a hardware component as well. Hackathons typically last between a day and a week. Some hackathons are intended simply for educational or social purposes, although in many cases the goal is to create usable software. Hackathons tend to have a specific focus, which can include the programming language used, the operating system, an application, an API, or the subject and the demographic group of the programmers. In other cases, there is no restriction on the type of software being created.</p>
 
-<!-- TeamGroup.vtl -->
 
-  #if ($teamCollectionsAll)
-    <h1>All Teams</h1>
-    <ul>
-      #foreach ($team in $teamCollectionsAll)
-      <li><a href="/teams/$team.getId()/new-member">$team.getTeamName()</a></li>
-      #end
-    </ul>
-
-  #else
-    <p>
-      No Teams to display.
-    </p>
-  #end
-
-  <a href="/teams/inventory">View Team List</a><br>
-<a href="/teams/members/new">Add a New Member</a>
+<a href="/teams">View Team List</a>
+<a href="/teams/new">Add a New Team</a>
 
 
 <!--index.vtl-->

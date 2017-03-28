@@ -1,0 +1,12 @@
+<h1>$team.getName() members:</h1>
+
+<ul>
+  #foreach($member in $team.getMembers())
+   <li>$member.getName()</li>
+   <li>$member.getLanguage()</li>
+   <li>$member.getSkill()</li>
+  #end
+</ul>
+
+<a href="/teams/$team.getId()/members/new">Add a new task</a>
+<a href="/teams">All teams</a>
