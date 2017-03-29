@@ -1,0 +1,16 @@
+body{
+  background-color: lightgrey;
+  font-family: 'Crimson Text', serif;
+  border: 4px solid darkblue;
+}
+
+.jumbotron{
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Revalia', cursive;
+}
+
+html, body {
+  height: 100%;
+  width: auto;
+}

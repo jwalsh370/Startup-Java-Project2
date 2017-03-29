@@ -2,11 +2,12 @@
 
 <ul>
   #foreach($member in $team.getMembers())
-   <li>$member.getName()</li>
-   <li>$member.getLanguage()</li>
-   <li>$member.getSkill()</li>
+   <li>Member Name: $member.getName()</li>
+   <li>Member Language: $member.getLanguage()</li>
+   <li>Member Skill: $member.getSkill()</li><br>
   #end
 </ul>
 
 <a href="/teams/$team.getId()/members/new">Add a new Member</a>
 <a href="/teams">All teams</a>
+<a href="/">Go Home</a>
