@@ -9,7 +9,7 @@ public class MemberTest {
      Member.clear();
    }
 
-  @Test
+  s@Test
   public void MemberClass_Instantiates_True() {
     Member myMember = new Member("Moe", "Java", "beginner");
     assertEquals(true, myMember instanceof Member);
